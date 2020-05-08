@@ -34,7 +34,7 @@ window.mouseYOffset = -.0253
 window.click = 0;
 //funcs
 window.mouseX = () => ((-mouse.x/window.innerWidth)+.5+mouseXOffset);
-window.mouseY = () => ((-mouse.y/window.innerHeight)+.5+mouseXOffset);
+window.mouseY = () => ((-mouse.y/window.innerHeight)+.5+mouseYOffset);
 //adding Listeners
 window.document.body.addEventListener('mousedown', function(){ click = 1; }, true);
 window.document.body.addEventListener('mouseup', function(){ click = 0 }, true);
