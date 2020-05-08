@@ -42,8 +42,8 @@
 - [Using image or video](#using-image-or-video)
 ### Maths
 - [Constants](#constants)
-  -[screenratio](#screenratio)
-  -[PI](#PI)
+  - [screenratio](#screenratio)
+  - [PI](#PI)
 - [Oscillators](#oscillators)
   - [rand](#rand)
   - [sin](#sin)
