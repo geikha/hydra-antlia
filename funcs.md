@@ -96,8 +96,9 @@ solid_([1,0,0.5]).out(o0);
 
 ### square
 
-`javascript
-square( s, rgb, smooth, op, x, y )`
+```javascript
+square( s, rgb, smooth, op, x, y )
+```
 
 * `s` (size) :: float (default `.3`)
 * `rgb` (color) :: Array (default `[1,1,1]`)
