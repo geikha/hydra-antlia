@@ -1,4 +1,6 @@
-//ANTLIA
+//ANTLIA by Ritchse
+// https://github.com/ritchse/hydra-antlia
+//
 //just in case
 hush()
 //Maths
