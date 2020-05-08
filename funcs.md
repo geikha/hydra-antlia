@@ -138,7 +138,7 @@ solid_(grey)
   .out(o0)
   // Shows a blue circle pulsating over a red circle over a grey background.
 ```
-Note how, since colors are Arrays, you can store colors by their namers, and that's exactly what Antlia does. (See the [list of colors](#list-of-colors)
+Note how, since colors are Arrays, you can store colors by their namers, and that's exactly what Antlia does. (See the [list of colors](#list-of-colors))
 
 ### triangle
 
@@ -437,7 +437,7 @@ purple | [0.5,0,1]
 ### Benefits
 
 * **You can make variables** and use the same color by its name multiple times.
-* **You can manipulate those Arrays to get new colors:** See [comp()](#comp), [triad()](#comp) and [coloravg()](#color avg).
+* **You can manipulate those Arrays to get new colors:** See [comp()](#comp), [triad()](#comp) and [coloravg()](#color-avg).
 * **You can make a function that receives a Hex RGB color:*** See [hexcolor()](hexcolor)
 * **With named variables, you don't have to think too much*** Less thinking, more coding.
 * **You can easily make color palettes**
