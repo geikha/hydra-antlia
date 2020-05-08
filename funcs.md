@@ -1011,7 +1011,7 @@ key.y = 0
 
 `()=>key.y`
 
-key.y is an [axis](#keyboard-ineractivity), its value will increase when you press the up arrow key, and decrease when pressing the down arrow key.
+key.y is an [axis](#keyboard-interactivity), its value will increase when you press the up arrow key, and decrease when pressing the down arrow key.
 
 #### Example
 
@@ -1027,7 +1027,7 @@ circle(.6).diff(osc(8,.1,1))
 
 `()=>key.x`
 
-key.x is an [axis](#keyboard-ineractivity), its value will increase when you press the left arrow key, and decrease when pressing the right arrow key.
+key.x is an [axis](#keyboard-interactivity), its value will increase when you press the left arrow key, and decrease when pressing the right arrow key.
 
 #### Example
 
