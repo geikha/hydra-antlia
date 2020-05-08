@@ -915,7 +915,7 @@ osc(40,.1,1)
   //feedback will only occur while clicking
 ```
 
-### Mouse interactity example
+### Mouse interactivity example
 
 #### Draw inside Hydra:
 
