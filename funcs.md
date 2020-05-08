@@ -24,7 +24,7 @@
   - [star](#star)
   - [grid](#grid)
 ### Color
-- [Using Colors as Arrays](#using-color)
+- [Using Colors as Arrays](#using-color-as-arrays)
   - [List of colors](#list-of-colors)
   - [Benefits of using colors as Arrays](#benefits)
   - [Downsides of using colors as Arrays](#downsides)
@@ -83,7 +83,7 @@
 
 * `rgb` :: Array (default `[0,0,0]`)
 
-'solid_' does exactly the same as Hydra's 'solid' functions, but takes the color as an array ([r,g,b]). More on this topic [later](#using-color).
+'solid_' does exactly the same as Hydra's 'solid' functions, but takes the color as an array ([r,g,b]). More on this topic [later](#using-color-as-arrays).
 
 #### Example
 
