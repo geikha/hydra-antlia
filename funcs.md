@@ -439,8 +439,8 @@ purple | [0.5,0,1]
 
 * **You can make variables** and use the same color by its name multiple times.
 * **You can manipulate those Arrays to get new colors:** See [comp()](#comp), [triad()](#comp) and [coloravg()](#color-avg).
-* **You can make a function that receives a Hex RGB color:*** See [hexcolor()](hexcolor)
-* **With named variables, you don't have to think too much*** Less thinking, more coding.
+* **You can make a function that receives a Hex RGB color:** See [hexcolor()](#hexcolor)
+* **With named variables, you don't have to think too much.** Less thinking, more coding.
 * **You can easily make color palettes**
 
 ### Downsides
