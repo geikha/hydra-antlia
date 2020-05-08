@@ -33,7 +33,7 @@
   - [triad](#triad)
   - [hexcolor](#hexcolor)
   - [coloravg](#coloravg)
-- [Color effects]
+- [Color effects](#color-effects)
   - [color_](#color_)
   - [applyColor](#applycolor)
   - [applyColor2](#applycolor2)
@@ -1062,6 +1062,8 @@ solid_(darkblue).hue(()=>key.x*2).layer(grid(24,12,.12))
     .out(o0)
     // move the deformation effect around the screen with your arrow keys
 ```
+
+### Controlling variables
 
 ```javascript
 key.x = 0; key.y = 0;
