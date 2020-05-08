@@ -13,7 +13,7 @@ If you're wondering about the name, *Antlia* is the south-bordering constelation
 
 * **Doing geometric stuff in pure Hydra can get really tedious.** And it makes sense, after all Hydra is inspired by analog modular synthesizers. I started Antlia after trying to draw some flags inside Hydra and realizing how the analog-signal way of thinking it's so counter intuitive for that specific goal.
 * **I barely know JavaScript**, so having to search for [an example of using images in Hydra](https://gist.github.com/munshkr/a4c280240bfd07a9819c1218d3952571) because I don't know nothing about JavaScript classes felt like losing time.
-* **I want to code more, think less.** Having to think mathematically about the Math functions can get frustrating when you don't get the expected results, same goes with trying to sum RGB colors inside your head.
+* **I want to code more, think less.** Having to think mathematically about the Math functions can get frustrating when you don't get the expected results, same goes with trying to form RGB colors inside your head.
 * **I love colors.** I love colors.
 * **Interacting with Hydra with mouse and keyboard is so fun,** it feels like a superpower, so I wanted to make it easier to achieve that.
 
