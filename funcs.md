@@ -64,14 +64,14 @@
   - [mouseYOffset](#mouseYOffset)
   - [click](#click)
 - [Keyboard Interactivity](#mouse-interactivity)
-  - [key.up](#key.up)
-  - [key.down](#key.down)
-  - [key.left](#key.left)
-  - [key.right](#key.right)
+  - [key.up](#keyup)
+  - [key.down](#keydown)
+  - [key.left](#keyleft)
+  - [key.right](#keyright)
   - [initKeyControl](#initKeyControl)
-  - [key.y](#key.y)
-  - [key.x](#key.x)
-  - [key.sensibility](#key.sensibility)
+  - [key.y](#keyy)
+  - [key.x](#keyx)
+  - [key.sensibility](#keysensibility)
 
 ---
 
@@ -928,7 +928,7 @@ solid()
 
 ## Keyboard interactivity
 
-Antlia allows you to use the arrow keys to interact with your code. You can do it in two ways: You can use the different arrow keys the same as you can use [click](#click), changing values from 0 to 1 while pressing. Or you can also change the value of an [axis](#key.y). For example, pressing the up arrow key will increase the value of the [key.y axis](#key.y), while the down arrow key will decrease it. Same goes for left and right with the [key.x axis](#key.x), respectively.
+Antlia allows you to use the arrow keys to interact with your code. You can do it in two ways: You can use the different arrow keys the same as you can use [click](#click), changing values from 0 to 1 while pressing. Or you can also change the value of an [axis](#keyy). For example, pressing the up arrow key will increase the value of the [key.y axis](#keyy), while the down arrow key will decrease it. Same goes for left and right with the [key.x axis](#keyx), respectively.
 
 Shoutout to [JuanFdS](https://github.com/JuanFdS) from [CLiC](https://colectivo-de-livecoders.gitlab.io/) for his JavaScript knowledge that made the axis function possible <3.
 
@@ -996,7 +996,7 @@ circle(.6).diff(osc(8))
 
 `initKeyControl()`
 
-To save resources, the [key.y](#key.y) and [key.x](#key.x) axes discussed [above](#keyboard-interactivity) will only start working as expected if you first evaluate this function. Make sure not to evaluate this more than once, cause it will double the effect + take more resources of your pc.
+To save resources, the [key.y](#keyy) and [key.x](#keyx) axes discussed [above](#keyboard-interactivity) will only start working as expected if you first evaluate this function. Make sure not to evaluate this more than once, cause it will double the effect + take more resources of your pc.
 
 #### Note
 
