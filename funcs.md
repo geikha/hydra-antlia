@@ -617,7 +617,7 @@ Shoutout to [munshkr](https://github.com/munshkr) and [his example](https://gist
 
 ### Videos (initVid)
 
-`initImg( source, url )`
+`initVid( source, url )`
 
 * `source` :: A Hydra Source, such as s0, s1, etc.
 * `url` :: string (the url of the video)
