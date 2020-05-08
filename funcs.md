@@ -18,7 +18,7 @@
 - [Quadrants](#quadrants)
   - [firstquad](#firstquad)
   - [secondquad](#secondquad)
-  - [thirdcuad](#thirdcuad)
+  - [thirdquad](#thirdquad)
   - [fourthquad](#fourthquad)
 - [Extra Sources](#extra-sources)
   - [star](#star)
