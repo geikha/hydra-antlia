@@ -40,6 +40,7 @@
 - [opacity](#opacity)
 ### Image and video 
 - [Using image or video](#using-image-or-video)
+  - [correctScale](#correctScale)
 ### Maths
 - [Constants](#constants)
   - [screenratio](#screenratio)
