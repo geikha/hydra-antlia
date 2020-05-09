@@ -87,6 +87,8 @@
 
 #### Example
 
+![Example of scroll_](https://i.imgur.com/9FCKwXn.png)
+
 ```javascript
 solid_([1,0,0.5]).out(o0);
     // Shows a dark pink color
@@ -111,6 +113,8 @@ Shows a perfect square on the screen. Try to remember these arguments because th
 
 #### Example
 
+![Example of square](https://i.imgur.com/ppWMpDJ.png)
+
 ```javascript
 solid_([0.5,0.5,0])
   .layer(square(.4,[1,0,0]))
@@ -132,6 +136,8 @@ solid_([0.5,0.5,0])
 Shows a perfect circle on the screen.
 
 #### Example
+
+![Example of cirlce](https://i.imgur.com/IJodzp8.gif)
 
 ```javascript
 solid_(grey)
@@ -157,6 +163,8 @@ Shows an equilateral triangle on the screen. Note that on Hydra, it can be diffi
 
 #### Example
 
+![Example of triangle](https://i.imgur.com/OglGoDS.gif)
+
 ```javascript
 solid_(darkgreen)
   .layer(triangle(()=>sawrange(time,0.1,0.5),lightgreen))
@@ -180,6 +188,8 @@ solid_(darkgreen)
 Shows a rectangle on the screen with a specified ratio.
 
 #### Example
+
+![Example of rectanlge](https://i.imgur.com/lhSCCPI.png)
 
 ```javascript
 solid_(darkgrey)
@@ -209,6 +219,8 @@ Shows a horizontal line on the screen. Note that the 'x' argument from before is
 
 #### Example
 
+![Example of horiz](https://i.imgur.com/i60hmmv.png)
+
 ```javascript
 solid_(skyblue)
   .layer(horiz(.4))
@@ -231,6 +243,8 @@ solid_(skyblue)
 Shows a vertical line on the screen. Note that the 'y' argument from before is removed, since it's no longer needed.
 
 #### Example
+
+![Example of vert](https://i.imgur.com/elwtDM0.png)
 
 ```javascript
 solid_([.1,.3,.75])
@@ -256,6 +270,8 @@ Shows a diagonal line on the screen that goes from the upper left part of the sc
 
 #### Example
 
+[**GIF: Example of leftdiag**](https://i.imgur.com/YZktxe3.gif)
+
 ```javascript
 solid_(black)
   .add(
@@ -280,6 +296,8 @@ solid_(black)
 Shows a diagonal line on the screen that goes from the upper right part of the screen to the lower left.
 
 #### Example
+
+![Example of rightdiag](https://i.imgur.com/9xV9n28.png)
 
 ```javascript
 solid_(azure)
@@ -326,6 +344,8 @@ Shows the lower right quadrant.
 
 ### Example
 
+![Example of Quadrants](https://i.imgur.com/BsmvKl4.png)
+
 ```javascript
 solid_(black)
   .layer(voronoi().shift().mask(firstquad()))
@@ -355,6 +375,8 @@ Shows a star of *v* vertices. Know that *v* can recieve a function (i.e. [sawran
 
 #### Example
 
+![Example of star](https://i.imgur.com/95p7t6F.png)
+
 ```javascript
 var sovietred = [.9,0,0]
 solid_(sovietred)
@@ -377,6 +399,8 @@ solid_(sovietred)
 Shows a grid of *x* columns and *y* rows.
 
 #### Example
+
+![Example of grid](https://i.imgur.com/738pTek.png)
 
 ```javascript
 solid_(darkgray)
@@ -459,6 +483,8 @@ Returns the RGB [complementary color](https://en.wikipedia.org/wiki/Complementar
 
 #### Example
 
+![Example of comp](https://i.imgur.com/ME97R4A.png)
+
 ```javascript
 solid_(amber).layer(circle(.7,amber.comp())).out(o0)
 solid_(aqua).layer(circle(.7,aqua.comp())).out(o1)
@@ -478,6 +504,8 @@ Returns the RGB [triadic color](https://en.wikipedia.org/wiki/Color_scheme#Triad
 'triad' will only affect the color if *n* is 0 or 1. Referencing the first and second triadic colors accordingly.
 
 #### Example
+
+![Example of triad](https://i.imgur.com/TE6ZWOR.png)
 
 ```javascript
 solid_(azure)
@@ -500,6 +528,8 @@ Returns the RGB color corresponding to a specific HEX number, **without** the *#
 
 #### Example
 
+[**GIF: Example of hexcolor**](https://i.imgur.com/6FIiS00.mp4)
+
 ```javascript
 osc().diff(osc().rotate(.4))
   .applyColor2(hexcolor('829f89'))
@@ -518,6 +548,8 @@ osc().diff(osc().rotate(.4))
 Returns the average within two different RGB colors.
 
 #### Example
+
+![Example of coloravg](https://i.imgur.com/qlvkKxT.png)
 
 ```javascript
 solid_(lightred)
@@ -540,6 +572,8 @@ solid_(lightred)
 
 #### Example
 
+[**GIF: Example of color_**](https://i.imgur.com/F9kSYvU.gif)
+
 ```javascript
 osc(80,.05,2).color_(yellow)
   .out(o0)
@@ -555,6 +589,8 @@ osc(80,.05,2).color_(yellow)
 Applies a given color to the highlights of a signal. Know that this effect doesn't care about the hue of the input, since it brings saturation to 0 before anything.
 
 #### Example
+
+[**GIF: Example of applyColor**](https://i.imgur.com/XXW1KK2.mp4)
 
 ```javascript
 osc().modulate(noise(5))
@@ -572,6 +608,8 @@ osc().modulate(noise(5))
 Applies a given color to the shadows of a signal. Know that this effect doesn't care about the hue of the input, since it brings saturation to 0 before anything.
 
 #### Example
+
+[**GIF: Example of applyColor2**](https://i.imgur.com/lE7sczO.mp4)
 
 ```javascript
 osc().modulate(noise(5))
@@ -593,6 +631,8 @@ You can still use the last two effects in the [version of Atlia that excludes ge
 Changes the opacity of a given signal. This is achieved by multipling the input by an empty solid: `.mult(solid(0,0,0,0),op)`
 
 #### Example
+
+[**GIF: Example of opacity**](https://i.imgur.com/HlN7Qjs.gif)
 
 ```javascript
 osc()
@@ -645,6 +685,8 @@ Very self-descriptive, multiply the X scale of something to make it perfectly sq
 
 #### Example
 
+[**GIF: Example of screenratio**](https://i.imgur.com/23SNMN0.gif)
+
 ```javascript
 osc()
   .diff(shape(4).scale(1,screenratio))
@@ -658,6 +700,8 @@ osc()
 Shorter version of 'Math.PI'
 
 #### Example
+
+[**GIF: Example of PI**](https://i.imgur.com/Xrw7LXd.mp4)
 
 ```javascript
 osc()
@@ -699,6 +743,8 @@ Shorter version of `Math.sin()`, with the adition of *amp* and *freq* arguments 
 
 #### Example
 
+![Example of sin](https://i.imgur.com/ZUyJtml.gif)
+
 ```javascript
 solid_(darkgray)
   .layer(circle().scrollX(()=>sin(time,.25,5)))
@@ -717,6 +763,8 @@ solid_(darkgray)
 Shorter version of `Math.cos()`, with the adition of *amp* and *freq* arguments for faster coding.
 
 #### Example
+
+![Example of cos](https://i.imgur.com/vUaANHy.gif)
 
 ```javascript
 solid_(darkgray)
@@ -737,6 +785,8 @@ Shorter version of `Math.tan()`, with the adition of *amp* and *freq* arguments 
 
 #### Example
 
+![Example of tan](https://i.imgur.com/ehQMm9T.gif)
+
 ```javascript
 solid_(darkgray)
   .layer(circle(()=>tan()))
@@ -754,6 +804,8 @@ solid_(darkgray)
 Emulates a [sawtooth wave](https://en.wikipedia.org/wiki/Sawtooth_wave)
 
 #### Example
+
+![Example of saw](https://i.imgur.com/rKUTq5c.gif)
 
 ```javascript
 solid_(darkgray)
@@ -775,6 +827,8 @@ Emulates [the bouncing of a ball](https://www.google.com/search?sxsrf=ALeKk02xWd
 The ***bouncing*** argument lets you adjust how much the ball bounces inside the cycle.
 
 #### Example
+
+![Example of bounce](https://i.imgur.com/PmAmXDM.gif)
 
 ```javascript
 solid_(darkgray)
@@ -865,6 +919,8 @@ mouseX returns the relative position of the mouse over the horizontal axis (0.5 
 
 #### Example
 
+![Example of mouseX](https://i.imgur.com/xRC2gvH.gif)
+
 ```javascript
 solid_(black)
   .layer(circle(.1,white,0.01,1,mouseX))
@@ -885,6 +941,8 @@ There's always a little offset when using the mouse, change the value of this va
 mouseY returns the relative position of the mouse over the vertical axis (0.5 full left, 0.5 full right). Note that you don't need to use the `()=>` notation to use it **unless** you want to make operations to the value. Then you should use it as seen above.
 
 #### Example
+
+![Example of mouseY](https://i.imgur.com/Zkxr2oC.gif)
 
 ```javascript
 solid_(black)
@@ -907,6 +965,8 @@ click is a variable that is 0, and changes to 1 while you're pressing the click 
 
 #### Example
 
+[**GIF: Example of click**](https://i.imgur.com/i8kohUz.mp4)
+
 ```javascript
 osc(40,.1,1)
   .modulate(osc(18))
@@ -918,6 +978,8 @@ osc(40,.1,1)
 ### Mouse interactivity example
 
 #### Draw inside Hydra:
+
+![draw inside hydra](https://i.imgur.com/GHLqqH8.gif)
 
 ```
 solid()
@@ -1049,6 +1111,8 @@ Change this value to adjust how big of a change pressing the arrow keys makes.
 
 ### Moving objects in the screen
 
+![moving objects 1](https://i.imgur.com/EEL2NkL.gif)
+
 ```javascript
 key.x = 0; key.y = 0;
 solid_(darkred)
@@ -1056,6 +1120,8 @@ solid_(darkred)
     .out(o0)
     // move the star around the screen with your arrow keys
 ```
+
+![moving objects 2](https://i.imgur.com/3ZYaBz2.gif)
 
 ```javascript
 key.x = 0; key.y = 0;
@@ -1066,6 +1132,8 @@ solid_(darkblue).hue(()=>key.x*2).layer(grid(24,12,.12))
 ```
 
 ### Controlling variables
+
+[**GIF: Controlling variables with the arrow keys**](https://i.imgur.com/VRgeRVf.mp4)
 
 ```javascript
 key.x = 0; key.y = 0;
