@@ -1,7 +1,9 @@
 # Antlia
-A collection of functions for [Hydra](https://github.com/ojack/hydra/).
+**A collection of functions for [Hydra](https://github.com/ojack/hydra/).**
 
 Antlia makes it easier to use geometry, coloring and interactivity inside Hydra. It also adds easy-access image use and extra 'Math' functions.
+
+*If you're here just for the documentation click [here](https://github.com/ritchse/hydra-antlia/blob/master/funcs.md).*
 
 ## How to use
 
