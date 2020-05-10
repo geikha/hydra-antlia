@@ -104,7 +104,28 @@ window.initKeyControl = function() {
 setInterval(incrementKeys, 25)
 };
 //util
-window.solid_ = (rgb=[0,0,0]) => solid(rgb[0],rgb[1],rgb[2])
+window.unzipKeepingNonindexed = function(arr) {
+  var elements = arr.length;
+  var len = arr[0].length;
+  var final = [];
+  for (var i = 0; i < len; i++) {
+    var temp = Object.assign([], arr);
+    temp.length = 0;
+    for (var j = 0; j < elements; j++) {
+      temp.push(arr[j][i]);
+    }
+    final.push(temp);
+  }
+  return final;
+};
+window.solid_ = (rgb=[0,0,0]) => {
+  if(rgb[0].constructor === Array) {
+    return solid(...window.unzipKeepingNonindexed(rgb));
+  }
+  else {
+    return solid(...rgb);
+  }
+};
 osc().constructor.prototype.opacity = function(op) {
   if(typeof op === 'function')
     i = ()=>(1-op());
@@ -112,12 +133,22 @@ osc().constructor.prototype.opacity = function(op) {
     i = 1-op;
   return this.mult(solid(0,0,0,0),i);
 }
-osc().constructor.prototype.color_ = function(rgb) {
-  return this.color(rgb[0],rgb[1],rgb[2]);
-}
-osc().constructor.prototype.applyColor = function(rgb) {
-  return this.saturate(0).color(rgb[0],rgb[1],rgb[2]);
-}
+osc().constructor.prototype._color = function(rgb = [1,1,1,1]) { 
+  if(rgb[0].constructor === Array) {
+    return this.color(...window.unzipKeepingNonindexed(rgb));
+  }
+  else {
+    return this.color(...rgb);
+  }
+};
+osc().constructor.prototype.applyColor = function(rgb = [1,1,1,1]) { 
+  if(rgb[0].constructor === Array) {
+    return this.saturate(0).color(...window.unzipKeepingNonindexed(rgb));
+  }
+  else {
+    return this.saturate(0).color(...rgb);
+  }
+};
 osc().constructor.prototype.applyColor2 = function(rgb) {
   return this.saturate(0).invert().color_(rgb.comp()).invert();
 }
