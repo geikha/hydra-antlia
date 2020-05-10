@@ -114,7 +114,7 @@ osc().constructor.prototype.opacity = function(op) {
 osc().constructor.prototype.applyColor = function(r,g,b) {
   return this.saturate(0).color(r,g,b);
 }
-osc().constructor.prototype.applyColor2 = function(rgb) {
+osc().constructor.prototype.applyColor2 = function(r,g,b) {
   return this.saturate(0).invert().color(r,g,b).invert();
 }
 //sources
