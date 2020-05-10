@@ -115,7 +115,7 @@ osc().constructor.prototype.applyColor = function(r,g,b) {
   return this.saturate(0).color(r,g,b);
 }
 osc().constructor.prototype.applyColor2 = function(r,g,b) {
-  return this.saturate(0).invert().color(r,g,b).invert();
+  return this.saturate(0).invert().color(1-r,1-g,1-b).invert();
 }
 //sources
 //img
