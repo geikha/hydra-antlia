@@ -133,7 +133,7 @@ osc().constructor.prototype.opacity = function(op) {
     i = 1-op;
   return this.mult(solid(0,0,0,0),i);
 }
-osc().constructor.prototype._color = function(rgb = [1,1,1,1]) { 
+osc().constructor.prototype.color_ = function(rgb = [1,1,1,1]) { 
   if(rgb[0].constructor === Array) {
     return this.color(...window.unzipKeepingNonindexed(rgb));
   }
