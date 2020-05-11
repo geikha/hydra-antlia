@@ -27,7 +27,6 @@
 - [Using Colors as Arrays](#using-color-as-arrays)
   - [List of colors](#list-of-colors)
   - [Benefits of using colors as Arrays](#benefits)
-  - [Downsides of using colors as Arrays](#downsides)
 - [Color manipulation](#color-manipulation)
   - [comp](#comp)
   - [triad](#triad)
@@ -467,11 +466,7 @@ purple | [0.5,0,1]
 * **You can make a function that receives a Hex RGB color:** See [hexcolor()](#hexcolor)
 * **With named variables, you don't have to think too much.** Less thinking, more coding.
 * **You can easily make color palettes**
-
-### Downsides
-
-* **You can't make use of the typical Array-as-cycles way of Hydra** So as of now, you can't do stuff like `[violet,purple,pink]`.
-Feel free to tell me if you find another big downside, this is the one I've encountered coding myself.
+* **Update: You can now cycle through colors defined as Arrays thanks to [v21](https://github.com/v21)'s Pull Request. Thanks George!**
 
 ## Color manipulation
 
@@ -559,6 +554,14 @@ solid_(lightred)
   // Shows a light blue 2:1 rectangle over a light red background. 
   // Over them a circle, which color is the average of the previous.
 ```
+
+### Cycling through colors
+
+`[red,purple].fast(.2).smooth()`
+
+Remember you can use the Hydra's cycling function. Just make an Array of colors to get it working.
+
+Thanks to [v21](https://github.com/v21) for his code that made this function compatible with colors as Arrays.
 
 ## Color effects
 
