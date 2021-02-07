@@ -133,7 +133,7 @@ osc().constructor.prototype.opacity = function(op) {
     i = 1-op;
   return this.mult(solid(0,0,0,0),i);
 }
-osc().constructor.prototype.color_ = function(rgb = [1,1,1,1]) { 
+osc().constructor.prototype.color_ = function(rgb = [1,1,1,1]) {
   if(rgb[0].constructor === Array) {
     return this.color(...window.unzipKeepingNonindexed(rgb));
   }
@@ -141,7 +141,7 @@ osc().constructor.prototype.color_ = function(rgb = [1,1,1,1]) {
     return this.color(...rgb);
   }
 };
-osc().constructor.prototype.applyColor = function(rgb = [1,1,1,1]) { 
+osc().constructor.prototype.applyColor = function(rgb = [1,1,1,1]) {
   if(rgb[0].constructor === Array) {
     return this.saturate(0).color(...window.unzipKeepingNonindexed(rgb));
   }
@@ -153,21 +153,6 @@ osc().constructor.prototype.applyColor2 = function(rgb) {
   return this.saturate(0).invert().color_(rgb.comp()).invert();
 }
 //sources
-//img
-window.initImg = function(source,url){
-var img = document.createElement('img');
-img.crossOrigin = "anonymous";
-img.src = url;
-img.onload = function() {
-source.init({ src: img, dynamic: false });};
-}
-window.initVid = function(source,url){
-var img = document.createElement('img');
-img.crossOrigin = "anonymous";
-img.src = url;
-img.onload = function() {
-source.init({ src: img, dynamic: true });};
-}
 //img funcs
 osc().constructor.prototype.correctScale = function(source){
   return this.scale(1,source.src.width/source.src.height*screenratio)
