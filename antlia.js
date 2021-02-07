@@ -161,34 +161,34 @@ osc().constructor.prototype.correctScale = function(source){
   return this.scale(1,source.src.width/source.src.height*screenratio)
 }
 //basic shapes
-window.circle = (s=.3,rgb=[1,1,1],smooth=.007,op=1,x=0,y=0) =>
-			solid_(rgb).mask(shape(256,s,smooth).scale(1,screenratio).scroll(x,y)).opacity(op)
-window.square = (s=.25,rgb=[1,1,1],smooth=0,op=1,x=0,y=0) =>
-			solid_(rgb).mask(shape(4,s,smooth).scale(1,screenratio).scroll(x,y)).opacity(op)
-window.rectangle = function(s=.3,ratio=[1,1],rgb=[1,1,1],smooth=0,op=1,x=0,y=0){
+window.circle = (s=.3,rgb=[1,1,1],smooth=.007,x=0,y=0) =>
+			solid_(rgb).mask(shape(256,s,smooth).scale(1,screenratio).scroll(x,y))
+window.square = (s=.25,rgb=[1,1,1],smooth=0,x=0,y=0) =>
+			solid_(rgb).mask(shape(4,s,smooth).scale(1,screenratio).scroll(x,y))
+window.rectangle = function(s=.3,ratio=[1,1],rgb=[1,1,1],smooth=0,x=0,y=0){
   var r;
   if(ratio[0]>ratio[1])
     r=ratio[1];
   else
     r=ratio[0];
-  return solid_(rgb).mask(shape(4,s,smooth).scale(1/r,screenratio*ratio[0],ratio[1]).scroll(x,y)).opacity(op);
+  return solid_(rgb).mask(shape(4,s,smooth).scale(1/r,screenratio*ratio[0],ratio[1]).scroll(x,y));
 }
-window.triangle = function(s=.3,rgb=[1,1,1],smooth=.007,op=1,x=0,y=0) {
+window.triangle = function(s=.3,rgb=[1,1,1],smooth=.007,x=0,y=0) {
   if(typeof s === 'function')
     yoffset = ()=>(0-s()/4);
   else
     yoffset = (0-s/4);
-  return solid_(rgb).mask(shape(3,s,smooth).rotate(PI).scrollY(yoffset).scale(1,screenratio).scroll(x,y)).opacity(op);
+  return solid_(rgb).mask(shape(3,s,smooth).rotate(PI).scrollY(yoffset).scale(1,screenratio).scroll(x,y));
 }
 //strips
-window.horiz = (s=.3,rgb=[1,1,1],smooth=0,op=1,y=0) =>
-  solid_(rgb).mask(shape(2,s,smooth).scrollY(y)).opacity(op)
-window.vert = (s=.3,rgb=[1,1,1],smooth=0,op=1,x=0) =>
-  solid_(rgb).mask(shape(2,s,smooth).rotate(PI/2).scrollX(x)).opacity(op)
-window.leftdiag = (s=.3,rgb=[1,1,1],smooth=0,op=1,x=0,y=0) =>
-  solid_(rgb).mask(shape(2,s,smooth).rotate(PI/4).scroll(x,y)).opacity(op)
-window.rightdiag = (s=.3,rgb=[1,1,1],smooth=0,op=1,x=0,y=0) =>
-  solid_(rgb).mask(shape(2,s,smooth).rotate(PI/-4).scroll(x,y)).opacity(op)
+window.horiz = (s=.3,rgb=[1,1,1],smooth=0,y=0) =>
+  solid_(rgb).mask(shape(2,s,smooth).scrollY(y))
+window.vert = (s=.3,rgb=[1,1,1],smooth=0,x=0) =>
+  solid_(rgb).mask(shape(2,s,smooth).rotate(PI/2).scrollX(x))
+window.leftdiag = (s=.3,rgb=[1,1,1],smooth=0,x=0,y=0) =>
+  solid_(rgb).mask(shape(2,s,smooth).rotate(PI/4).scroll(x,y))
+window.rightdiag = (s=.3,rgb=[1,1,1],smooth=0,x=0,y=0) =>
+  solid_(rgb).mask(shape(2,s,smooth).rotate(PI/-4).scroll(x,y))
 //quadrants
 window.firstquad = (rgb=[1,1,1]) =>
   solid_(rgb).mask(shape(4,1,0).scale(.5).scroll(.25,.25))
