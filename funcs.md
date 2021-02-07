@@ -1,4 +1,4 @@
-# Functions
+# Functions : OUTDATED (Will update soon)
 
 ## Categories
 
