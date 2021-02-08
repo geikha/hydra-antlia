@@ -272,9 +272,10 @@ window.coloravg = function(...rgb) {
   return rgbavg;
 }
 window.hexcolor = function(hex="FFFFFF") {
-	var r = parseInt(hex.substring(0,2),16);
-	var g = parseInt(hex.substring(2,4),16);
-	var b = parseInt(hex.substring(4,6),16);
+  const offset = hex[0]=='#' ? 1 : 0;
+	var r = parseInt(hex.substring(offset,offset+2),16);
+	var g = parseInt(hex.substring(offset+2,offset+4),16);
+	var b = parseInt(hex.substring(offset+4,offset+6),16);
 	r = 1*r/255; g = 1*g/255; b = 1*b/255;
 	return [r,g,b];
 }
