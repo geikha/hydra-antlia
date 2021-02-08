@@ -161,11 +161,11 @@ osc().constructor.prototype.correctScale = function(source){
   return this.scale(1,source.src.width/source.src.height*screenratio)
 }
 //basic shapes
-window.circle = (s=.3,rgb=[1,1,1],smooth=.007,x=0,y=0) =>
+window.circle = (s=.3,rgb=[1,1,1],x=0,y=0,smooth=.007) =>
 			solid_(rgb).mask(shape(256,s,smooth).scale(1,screenratio).scroll(x,y))
-window.square = (s=.25,rgb=[1,1,1],smooth=0,x=0,y=0) =>
+window.square = (s=.25,rgb=[1,1,1],x=0,y=0,smooth=0) =>
 			solid_(rgb).mask(shape(4,s,smooth).scale(1,screenratio).scroll(x,y))
-window.rectangle = function(s=.3,ratio=[1,1],rgb=[1,1,1],smooth=0,x=0,y=0){
+window.rectangle = function(s=.3,ratio=[1,1],rgb=[1,1,1],x=0,y=0,smooth=0){
   var r;
   if(ratio[0]>ratio[1])
     r=ratio[1];
@@ -173,7 +173,7 @@ window.rectangle = function(s=.3,ratio=[1,1],rgb=[1,1,1],smooth=0,x=0,y=0){
     r=ratio[0];
   return solid_(rgb).mask(shape(4,s,smooth).scale(1/r,screenratio*ratio[0],ratio[1]).scroll(x,y));
 }
-window.triangle = function(s=.3,rgb=[1,1,1],smooth=.007,x=0,y=0) {
+window.triangle = function(s=.3,rgb=[1,1,1],x=0,y=0,smooth=.007) {
   if(typeof s === 'function')
     yoffset = ()=>(0-s()/4);
   else
@@ -181,13 +181,13 @@ window.triangle = function(s=.3,rgb=[1,1,1],smooth=.007,x=0,y=0) {
   return solid_(rgb).mask(shape(3,s,smooth).rotate(PI).scrollY(yoffset).scale(1,screenratio).scroll(x,y));
 }
 //strips
-window.horiz = (s=.3,rgb=[1,1,1],smooth=0,y=0) =>
+window.horiz = (s=.3,rgb=[1,1,1],y=0,smooth=0) =>
   solid_(rgb).mask(shape(2,s,smooth).scrollY(y))
-window.vert = (s=.3,rgb=[1,1,1],smooth=0,x=0) =>
+window.vert = (s=.3,rgb=[1,1,1],x=0,smooth=0) =>
   solid_(rgb).mask(shape(2,s,smooth).rotate(PI/2).scrollX(x))
-window.leftdiag = (s=.3,rgb=[1,1,1],smooth=0,x=0,y=0) =>
+window.leftdiag = (s=.3,rgb=[1,1,1],x=0,y=0,smooth=0) =>
   solid_(rgb).mask(shape(2,s,smooth).rotate(PI/4).scroll(x,y))
-window.rightdiag = (s=.3,rgb=[1,1,1],smooth=0,x=0,y=0) =>
+window.rightdiag = (s=.3,rgb=[1,1,1],x=0,y=0,smooth=0) =>
   solid_(rgb).mask(shape(2,s,smooth).rotate(PI/-4).scroll(x,y))
 //quadrants
 window.firstquad = (rgb=[1,1,1]) =>
@@ -199,12 +199,12 @@ window.thirdquad  = (rgb=[1,1,1]) =>
 window.fourthquad  = (rgb=[1,1,1]) =>
   solid_(rgb).mask(shape(4,1,0).scale(.5).scroll(-.25,-.25))
 //extra
-window.star = function(s=.3,v=5,rgb=[1,1,1],smooth=0.007,op=1,x=0,y=0) {
+window.star = function(s=.3,v=5,rgb=[1,1,1],x=0,y=0,smooth=0.007) {
   if(typeof v === 'function')
     i = ()=>(Math.PI*(v()/2));
   else
     i = Math.PI*(v/2);
-  return solid_(rgb).mask(shape(1,-1,smooth).rotate(Math.PI/8*7).kaleid(v).rotate(i).scale(s,screenratio).scroll(x,y)).opacity(op);
+  return solid_(rgb).mask(shape(1,-1,smooth).rotate(Math.PI/8*7).kaleid(v).rotate(i).scale(s,screenratio).scroll(x,y));
 }
 window.grid = (x=8,y=4,b=0.05,rgb=[1,1,1],smooth=.001) => solid_(rgb).mask(shape(4,1-b,smooth).repeat(x,y).invert())
 //
