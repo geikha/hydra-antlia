@@ -211,20 +211,41 @@ window.grid = (x=8,y=4,b=0.05,rgb=[1,1,1],smooth=.001) => solid_(rgb).mask(shape
 //Color
 //funcs
 Array.prototype.comp = function() {
-  return [1-this[0],1-this[1],1-this[2]];
+  if (this[0].constructor === Array) {
+    this.forEach((item, i) => this[i] = this[i].comp())
+    return this;
+  } else {
+    return [1 - this[0], 1 - this[1], 1 - this[2]];
+  }
 };
-Array.prototype.triad = function(i=0) {
-	if (i === 0)
-		return [this[2],this[0],this[1]];
-	else if (i === 1)
-		return [this[1],this[2],this[0]]
-	else
-	 return this;
+Array.prototype.triad = function(i = 0) {
+  if (this[0].constructor === Array) {
+    this.forEach((item, j) => this[j] = this[j].triad(i));
+    return this;
+  } else {
+    if (i === 0)
+      return [this[2], this[0], this[1]];
+    else if (i === 1)
+      return [this[1], this[2], this[0]];
+    else
+      return this;
+  }
 };
-window.coloravg = function(rgb1,rgb2) {
-	var rgbavg = [,,];
-	for(i = 0; i<3; i++) rgbavg[i] = (rgb1[i]+rgb2[i])/2;
-	return rgbavg;
+Array.prototype.avg = function(...rgb) {
+  if (this[0].constructor === Array) {
+    this.forEach((item, i) => this[i] = this[i].avg(...rgb))
+    return this;
+  } else {
+    return coloravg(this, ...rgb)
+  }
+}
+window.coloravg = function(...rgb) {
+  var rgbavg = [0,0,0];
+  rgb.forEach(function(item){
+    item.forEach((item2,i) => rgbavg[i] += item2)
+  })
+  rgbavg.forEach((item, i) => rgbavg[i] /= rgb.length)
+  return rgbavg;
 }
 window.hexcolor = function(hex="FFFFFF") {
 	var r = parseInt(hex.substring(0,2),16);
@@ -232,6 +253,9 @@ window.hexcolor = function(hex="FFFFFF") {
 	var b = parseInt(hex.substring(4,6),16);
 	r = 1*r/255; g = 1*g/255; b = 1*b/255;
 	return [r,g,b];
+}
+window.hex = function(hex="FFFFFF"){
+  return hexcolor(hex)
 }
 //vars (color list)
 //shades
