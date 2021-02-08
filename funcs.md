@@ -37,7 +37,7 @@
   - [applyColor](#applycolor)
   - [applyColor2](#applycolor2)
 - [opacity](#opacity)
-### Image and video 
+### Image and video
 - [Using image or video](#using-image-or-video)
   - [correctScale](#correctScale)
 ### Maths
@@ -97,16 +97,13 @@ solid_([1,0,0.5]).out(o0);
 
 ### square
 
-```javascript
-square( s, rgb, smooth, op, x, y )
-```
+`square( s, rgb, x, y, smooth )`
 
 * `s` (size) :: float (default `.3`)
 * `rgb` (color) :: Array (default `[1,1,1]`)
-* `smooth` (amount of diffusion at the edges) :: float (default `0`)
-* `op` (opacity) :: float (default `1`)
 * `x` (x coord.) :: float (default `0`)
 * `y` (y coord.) :: float (default `0`)
+* `smooth` (amount of diffusion at the edges) :: float (default `0`)
 
 Shows a perfect square on the screen. Try to remember these arguments because they are found on every other shape.
 
@@ -123,14 +120,13 @@ solid_([0.5,0.5,0])
 
 ### circle
 
-`circle( s, rgb, smooth, op, x, y )`
+`circle( s, rgb, x, y, smooth )`
 
 * `s` (size) :: float (default `.3`)
 * `rgb` (color) :: Array (default `[1,1,1]`)
-* `smooth` (amount of diffusion at the edges) :: float (default `0.007`)
-* `op` (opacity) :: float (default `1`)
 * `x` (x coord.) :: float (default `0`)
 * `y` (y coord.) :: float (default `0`)
+* `smooth` (amount of diffusion at the edges) :: float (default `0.007`)
 
 Shows a perfect circle on the screen.
 
@@ -149,14 +145,13 @@ Note how, since colors are Arrays, you can store colors by their namers, and tha
 
 ### triangle
 
-`triangle( s, rgb, smooth, op, x, y )`
+`triangle( s, rgb, x, y, smooth )`
 
 * `s` (size) :: float (default `.3`)
 * `rgb` (color) :: Array (default `[1,1,1]`)
-* `smooth` (amount of diffusion at the edges) :: float (default `0`)
-* `op` (opacity) :: float (default `1`)
 * `x` (x coord.) :: float (default `0`)
 * `y` (y coord.) :: float (default `0`)
+* `smooth` (amount of diffusion at the edges) :: float (default `0`)
 
 Shows an equilateral triangle on the screen. Note that on Hydra, it can be difficult to have a triangle centered on the screen depending it size, Antlia will take care of that for you.
 
@@ -174,15 +169,14 @@ solid_(darkgreen)
 
 ### rectangle
 
-`rectangle( s, ratio, rgb, smooth, op, x, y )`
+`rectangle( s, ratio, rgb, x, y, smooth )`
 
 * `s` (size) :: float (default `.3`)
 * `rgb` (color) :: Array (default `[1,1,1]`)
 * `ratio` :: Array (default `[1,1]`)
-* `smooth` (amount of diffusion at the edges) :: float (default `0`)
-* `op` (opacity) :: float (default `1`)
 * `x` (x coord.) :: float (default `0`)
 * `y` (y coord.) :: float (default `0`)
+* `smooth` (amount of diffusion at the edges) :: float (default `0`)
 
 Shows a rectangle on the screen with a specified ratio.
 
@@ -205,14 +199,13 @@ Strips are lines that go all across the screen.
 
 ### horiz
 
-`horiz( s, ratio, rgb, smooth, op, y )`
+`horiz( s, ratio, rgb, y, smooth )`
 
 * `s` (size) :: float (default `.3`)
 * `rgb` (color) :: Array (default `[1,1,1]`)
 * `ratio` :: Array (default `[1,1]`)
-* `smooth` (amount of diffusion at the edges) :: float (default `0`)
-* `op` (opacity) :: float (default `1`)
 * `y` (y coord.) :: float (default `0`)
+* `smooth` (amount of diffusion at the edges) :: float (default `.0007`)
 
 Shows a horizontal line on the screen. Note that the 'x' argument from before is removed, since it's no longer needed.
 
@@ -230,14 +223,13 @@ solid_(skyblue)
 
 ### vert
 
-`vert( s, ratio, rgb, smooth, op, x )`
+`vert( s, ratio, rgb, x, smooth )`
 
 * `s` (size) :: float (default `.3`)
 * `rgb` (color) :: Array (default `[1,1,1]`)
 * `ratio` :: Array (default `[1,1]`)
-* `smooth` (amount of diffusion at the edges) :: float (default `0`)
-* `op` (opacity) :: float (default `1`)
 * `x` (x coord.) :: float (default `0`)
+* `smooth` (amount of diffusion at the edges) :: float (default `.0007`)
 
 Shows a vertical line on the screen. Note that the 'y' argument from before is removed, since it's no longer needed.
 
@@ -256,14 +248,13 @@ See how if you want a vertical strip to have the exact same thickness as a horiz
 
 ### leftdiag
 
-`leftdiag( s, rgb, smooth, op, x, y )`
+`leftdiag( s, rgb, x, y, smooth )`
 
 * `s` (size) :: float (default `.3`)
 * `rgb` (color) :: Array (default `[1,1,1]`)
-* `smooth` (amount of diffusion at the edges) :: float (default `0`)
-* `op` (opacity) :: float (default `1`)
 * `x` (x coord.) :: float (default `0`)
 * `y` (y coord.) :: float (default `0`)
+* `smooth` (amount of diffusion at the edges) :: float (default `0`)
 
 Shows a diagonal line on the screen that goes from the upper left part of the screen to the lower right.
 
@@ -283,14 +274,13 @@ solid_(black)
 
 ### rightdiag
 
-`rightdiag( s, rgb, smooth, op, x, y )`
+`rightdiag( s, rgb, x, y, smooth )`
 
 * `s` (size) :: float (default `.3`)
 * `rgb` (color) :: Array (default `[1,1,1]`)
-* `smooth` (amount of diffusion at the edges) :: float (default `0`)
-* `op` (opacity) :: float (default `1`)
 * `x` (x coord.) :: float (default `0`)
 * `y` (y coord.) :: float (default `0`)
+* `smooth` (amount of diffusion at the edges) :: float (default `0`)
 
 Shows a diagonal line on the screen that goes from the upper right part of the screen to the lower left.
 
@@ -354,21 +344,20 @@ solid_(black)
   .out(o0)
   // Shows something different on every part of the screen
 ```
-  
+
 ## Extra Sources
 
 ### star
 
-`star( s, v, rgb, smooth, op, x, y )`
+`star( s, v, rgb, x, y, smooth )`
 
 * `s` (size) :: float (default `.3`)
 * `v` (vertices) :: float (default `5`)
 * `rgb` (color) :: Array (default `[1,1,1]`)
 * `ratio` :: Array (default `[1,1]`)
-* `smooth` (amount of diffusion at the edges) :: float (default `0.007`)
-* `op` (opacity) :: float (default `1`)
 * `x` (x coord.) :: float (default `0`)
 * `y` (y coord.) :: float (default `0`)
+* `smooth` (amount of diffusion at the edges) :: float (default `0.007`)
 
 Shows a star of *v* vertices. Know that *v* can recieve a function (i.e. [sawrange](#sawrange)), but be careful not to use a number between -2 and 2 (exclusive).
 
@@ -415,7 +404,7 @@ solid_(darkgray)
 
 ## Using colors as Arrays
 
-Coloring in Antlia uses Arrays to refer to colors. These Arrays shall be used in a `[r,g,b]` format. These way of representing colors comes with its own [benefits](#benefits) and [downsides](#downsides). These are explained down below. However, one of the main benefits is the ability to store colors with it's own variable names. And that brings us to the next topic:
+Coloring in Antlia uses Arrays to express colors. These Arrays shall be used in a `[r,g,b]` format. These way of representing colors comes with its own [benefits](#benefits) and [downsides](#downsides). These are explained down below. However, one of the main benefits is the ability to store colors with it's own variable names. And that brings us to the next topic:
 
 ### List of Colors
 
@@ -551,7 +540,7 @@ solid_(lightred)
   .layer(rectangle(.7,[2,1],lightblue))
   .layer(circle(.5,coloravg(lightred,lightblue)))
   .out(o0)
-  // Shows a light blue 2:1 rectangle over a light red background. 
+  // Shows a light blue 2:1 rectangle over a light red background.
   // Over them a circle, which color is the average of the previous.
 ```
 
