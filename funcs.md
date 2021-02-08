@@ -182,7 +182,7 @@ Shows a rectangle on the screen with a specified ratio.
 
 #### Example
 
-![Example of rectanlge](https://i.imgur.com/lhSCCPI.png)
+![Example of rectangle](https://i.imgur.com/lhSCCPI.png)
 
 ```javascript
 solid_(darkgrey)
