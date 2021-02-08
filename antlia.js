@@ -35,6 +35,9 @@ window.click = 0;
 //funcs
 window.mouseX = () => ((-mouse.x/window.innerWidth)+.5+mouseXOffset);
 window.mouseY = () => ((-mouse.y/window.innerHeight)+.5+mouseYOffset);
+osc().constructor.prototype.followMouse = function(){
+  return this.scroll(mouseX,mouseY)
+}
 //adding Listeners
 window.document.body.addEventListener('mousedown', function(){ click = 1; }, true);
 window.document.body.addEventListener('mouseup', function(){ click = 0 }, true);
