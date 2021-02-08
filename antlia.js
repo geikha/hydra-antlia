@@ -100,8 +100,8 @@ window.document.body.addEventListener('keyup', event => {
       keyIsDown.right=false; break;
   }
 });
-window.initKeyControl = function() {
-setInterval(incrementKeys, 25)
+window.initKeyControl = function(cps=30) {
+setInterval(incrementKeys, Math.trunc(1000/cps))
 };
 //util
 window.unzipKeepingNonindexed = function(arr) {
