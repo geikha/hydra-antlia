@@ -285,6 +285,13 @@ window.hexcolor = function(hex="FFFFFF") {
 window.hex = function(hex="FFFFFF"){
   return hexcolor(hex)
 }
+window.hexpalette = function(arr = ["FFFFFF"]){
+  var arr2 = []
+  arr.forEach(function(hex){
+    arr2.push(hexcolor(hex))
+  })
+  return arr2
+}
 //vars (color list)
 //shades
 window.black = [0,0,0]
