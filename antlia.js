@@ -244,6 +244,17 @@ Array.prototype.triad = function(i = 0) {
       return this;
   }
 };
+Array.prototype.inv = function() {
+  if (this[0].constructor === Array) {
+    this.forEach((item, i) => this[i] = this[i].inv())
+    return this;
+  } else {
+    return [-this[0], -this[1], -this[2]];
+  }
+}
+window.colorinv = function(rgb){
+  return rgb.inv();
+}
 Array.prototype.avg = function(...rgb) {
   if (this[0].constructor === Array) {
     this.forEach((item, i) => this[i] = this[i].avg(...rgb))
