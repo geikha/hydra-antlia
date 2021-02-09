@@ -285,7 +285,7 @@ window.hexcolor = function(hex="FFFFFF") {
 window.hex = function(hex="FFFFFF"){
   return hexcolor(hex)
 }
-window.hexpalette = function(arr = ["FFFFFF"]){
+window.hexpalette = function(...arr){
   var arr2 = []
   arr.forEach(function(hex){
     arr2.push(hexcolor(hex))
