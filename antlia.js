@@ -228,16 +228,18 @@ window.grid = (x=8,y=4,b=0.05,rgb=[1,1,1],smooth=.001) => solid_(rgb).mask(shape
 //funcs
 Array.prototype.comp = function() {
   if (this[0].constructor === Array) {
-    this.forEach((item, i) => this[i] = this[i].comp())
-    return this;
+    arr = Array.from(this)
+    arr.forEach((item, i) => arr[i] = arr[i].comp())
+    return arr;
   } else {
     return [1 - this[0], 1 - this[1], 1 - this[2]];
   }
 };
 Array.prototype.triad = function(i = 0) {
   if (this[0].constructor === Array) {
-    this.forEach((item, j) => this[j] = this[j].triad(i));
-    return this;
+    arr = Array.from(this)
+    arr.forEach((item, j) => arr[j] = arr[j].triad(i));
+    return arr;
   } else {
     if (i === 0)
       return [this[2], this[0], this[1]];
@@ -249,8 +251,9 @@ Array.prototype.triad = function(i = 0) {
 };
 Array.prototype.inv = function() {
   if (this[0].constructor === Array) {
-    this.forEach((item, i) => this[i] = this[i].inv())
-    return this;
+    arr = Array.from(this)
+    arr.forEach((item, i) => arr[i] = arr[i].inv())
+    return arr;
   } else {
     return [-this[0], -this[1], -this[2]];
   }
@@ -260,8 +263,9 @@ window.colorinv = function(rgb){
 }
 Array.prototype.avg = function(...rgb) {
   if (this[0].constructor === Array) {
-    this.forEach((item, i) => this[i] = this[i].avg(...rgb))
-    return this;
+    arr = Array.from(this)
+    arr.forEach((item, i) => arr[i] = arr[i].avg(...rgb))
+    return arr;
   } else {
     return coloravg(this, ...rgb)
   }
