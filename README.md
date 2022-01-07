@@ -10,12 +10,12 @@ Antlia is a group of extensions for Hydra. Current scripts add functionalities f
 You'll have use [hydra's external scripts functionality](https://github.com/ojack/hydra#loading-external-scripts) as such:
 
 ```javascript
-await loadScript("https://url/to/antlia/script.js")
+await loadScript("https://hydra-antlia-2-0.glitch.me/antlia-shapes.js")
 
 //...code
 ```
 
-Public links to the extensions coming soon! You can just copy and paste from the files as of now.
+Just change the name of the file to whatever extension you want to use.
 
 ## Why Antlia?
 If you're wondering about the name, *Antlia* is the south-bordering constelation of *Hydra*. If you're wondering why I made Antlia, here it is:
