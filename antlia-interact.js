@@ -18,6 +18,8 @@ window.ctrlClick = 0;
 window.ctrlClicks = 0;
 window.shiftClick = 0;
 window.shiftClicks = 0;
+window.randClick = Math.random();
+window.rangedRandClick = (min = 0, max = 1) => { randClick * (max - min) + min };
 //funcs
 window.mouseX = () => ((-mouse.x / window.innerWidth) + .5 + mouseXOffset);
 window.mouseY = () => ((-mouse.y / window.innerHeight) + .5 + mouseYOffset);
@@ -25,25 +27,26 @@ osc().constructor.prototype.followMouse = function () {
     return this.scroll(mouseX, mouseY)
 }
 //adding Listeners
-window.document.body.addEventListener('mousedown', function (e) { 
-  	click = 1;
-  	clicks += 1;
-  	if(e.altKey){
-  		altClick = 1;
-  		altClicks += 1;
-    } else if(e.ctrlKey){
-      	ctrlClick = 1;
-  		ctrlClicks += 1;
-    } else if(e.shiftKey){
-      	shiftClick = 1;
-  		shiftClicks += 1;
+window.document.body.addEventListener('mousedown', function (e) {
+    click = 1;
+    clicks += 1;
+    if (e.altKey) {
+        altClick = 1;
+        altClicks += 1;
+    } else if (e.ctrlKey) {
+        ctrlClick = 1;
+        ctrlClicks += 1;
+    } else if (e.shiftKey) {
+        shiftClick = 1;
+        shiftClicks += 1;
     }
+    randClick = Math.random();
 }, true);
-window.document.body.addEventListener('mouseup', function () { 
-	click = 0;
-  	altClick = 0;
-  	ctrlClick = 0;
-  	shiftClick = 0;
+window.document.body.addEventListener('mouseup', function () {
+    click = 0;
+    altClick = 0;
+    ctrlClick = 0;
+    shiftClick = 0;
 }, true);
 //ARROW KEYS
 //vars
@@ -110,16 +113,16 @@ window.document.body.addEventListener('keyup', event => {
 
 window.keyControlInterval = false;
 window.initKeyControl = function (cps = 30) {
-    if(keyControlInterval)
+    if (keyControlInterval)
         stopKeyControl();
     window.keyControlInterval = setInterval(incrementKeys, Math.trunc(1000 / cps))
 };
-window.stopKeyControl = ()=> { clearInterval(keyControlInterval); keyControlInterval = false; };
+window.stopKeyControl = () => { clearInterval(keyControlInterval); keyControlInterval = false; };
 
 //wheel
 
 window.wheel = { y: 0, sensitivity: 0.02 };
-window.onwheel = function(e){
-	let sign = e.deltaY>0 ? -1 : 1;
-  	wheel.y += (sign*wheel.sensitivity);
+window.onwheel = function (e) {
+    let sign = e.deltaY > 0 ? -1 : 1;
+    wheel.y += (sign * wheel.sensitivity);
 }

@@ -69,6 +69,18 @@ You can also detect and read the amount of clicks realized while pressing the al
 `ctrlClick` `ctrlClicks`
 `shiftClick` `shiftClicks`
 
+### randClick
+
+`()=>randClick`
+
+Random value that changes everytime a click is done. Ranges from 0 to 1.
+
+### rangedRandClick()
+
+`()=>rangedRandClick(min,max)`
+
+Same as above but within an specified range.
+
 ### Mouse interactivity example
 
 #### Draw inside Hydra:
