@@ -38,13 +38,6 @@ window.addEventListener('touchmove',function(e){
     //  pinch.lastD = pinch.d;
     //}
 });
-//orientation
-window.orientation = { alpha: 0, gamma: 0, beta: 0 }
-window.addEventListener("deviceorientation", function(e) {
-	orientation.alpha = e.alpha ? e.alpha : 0;
-  	orientation.gamma = e.gamma ? e.gamma : 0;
-  	orientation.beta = e.beta ? e.beta : 0;
-});
 window.hideGui = function() {
 document.getElementById('modal-header').style.display = "none"
 document.getElementsByClassName('CodeMirror-scroll')[0].style.display = 'none'
