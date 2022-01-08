@@ -6,9 +6,6 @@
 //const
 window.mouseXOffset = -.0135
 window.mouseYOffset = -.0253
-//const
-window.mouseXOffset = -.0135
-window.mouseYOffset = -.0253
 //vars
 window.click = 0;
 window.clicks = 0;
