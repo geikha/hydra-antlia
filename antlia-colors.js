@@ -126,6 +126,13 @@ window.hexpalette = function (...arr) {
     })
     return arr2
 }
+window.randcolor = function(alpha = false){
+	r = Math.random();
+  	g = Math.random();
+  	b = Math.random();
+  	a = alpha ? Math.random() : 1;
+  	return [r,g,b,a];
+}
 
 //vars (color list)
 //shades

@@ -113,6 +113,14 @@ Returns the RGB color corresponding to a specific HEX number, **without** the *#
 
 Returns the average within two different RGB colors.
 
+### randcolor
+
+`randcolor( alpha )`
+
+* `alpha` :: Boolean (default `false`)
+
+Returns a random color. The alpha argument tells the function if you want to randomize the alpha value too. You can use `true` or `false` or `1` and `0`. By default, the alpha value will not be randomized (returning a color with an alpha of 1).
+
 ### Cycling through colors
 
 `[red,purple].fast(.2).smooth()`
