@@ -6,8 +6,18 @@
 //const
 window.mouseXOffset = -.0135
 window.mouseYOffset = -.0253
+//const
+window.mouseXOffset = -.0135
+window.mouseYOffset = -.0253
 //vars
 window.click = 0;
+window.clicks = 0;
+window.altClick = 0;
+window.altClicks = 0;
+window.ctrlClick = 0;
+window.ctrlClicks = 0;
+window.shiftClick = 0;
+window.shiftClicks = 0;
 //funcs
 window.mouseX = () => ((-mouse.x / window.innerWidth) + .5 + mouseXOffset);
 window.mouseY = () => ((-mouse.y / window.innerHeight) + .5 + mouseYOffset);
@@ -15,8 +25,26 @@ osc().constructor.prototype.followMouse = function () {
     return this.scroll(mouseX, mouseY)
 }
 //adding Listeners
-window.document.body.addEventListener('mousedown', function () { click = 1; }, true);
-window.document.body.addEventListener('mouseup', function () { click = 0 }, true);
+window.document.body.addEventListener('mousedown', function (e) { 
+  	click = 1;
+  	clicks += 1;
+  	if(e.altKey){
+  		altClick = 1;
+  		altClicks += 1;
+    } else if(e.ctrlKey){
+      	ctrlClick = 1;
+  		ctrlClicks += 1;
+    } else if(e.shiftKey){
+      	shiftClick = 1;
+  		shiftClicks += 1;
+    }
+}, true);
+window.document.body.addEventListener('mouseup', function () { 
+	click = 0;
+  	altClick = 0;
+  	ctrlClick = 0;
+  	shiftClick = 0;
+}, true);
 //ARROW KEYS
 //vars
 window.key = { up: 0, down: 0, left: 0, right: 0, x: 0, y: 0, sensitivity: 0.02 };

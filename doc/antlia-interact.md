@@ -55,6 +55,20 @@ osc(40,.1,1)
   //feedback will only occur while clicking
 ```
 
+### clicks
+
+`()=>clicks`
+
+Amount of clicks since the page was loaded (can be reset with `clicks = 0`)
+
+### Alternative clicks
+
+You can also detect and read the amount of clicks realized while pressing the alt, ctrl or shift keys. The variable names are:
+
+`altClick` `altClicks`
+`ctrlClick` `ctrlClicks`
+`shiftClick` `shiftClicks`
+
 ### Mouse interactivity example
 
 #### Draw inside Hydra:
