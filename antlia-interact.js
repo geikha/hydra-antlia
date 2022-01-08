@@ -19,7 +19,7 @@ window.ctrlClicks = 0;
 window.shiftClick = 0;
 window.shiftClicks = 0;
 window.randClick = Math.random();
-window.rangedRandClick = (min = 0, max = 1) => { randClick * (max - min) + min };
+window.rangedRandClick = (min = 0, max = 1) => { return randClick * (max - min) + min };
 //funcs
 window.mouseX = () => ((-mouse.x / window.innerWidth) + .5 + mouseXOffset);
 window.mouseY = () => ((-mouse.y / window.innerHeight) + .5 + mouseYOffset);
