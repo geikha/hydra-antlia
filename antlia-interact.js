@@ -19,14 +19,14 @@ window.document.body.addEventListener('mousedown', function () { click = 1; }, t
 window.document.body.addEventListener('mouseup', function () { click = 0 }, true);
 //ARROW KEYS
 //vars
-window.key = { up: 0, down: 0, left: 0, right: 0, x: 0, y: 0, sensibility: 0.02 };
+window.key = { up: 0, down: 0, left: 0, right: 0, x: 0, y: 0, sensitivity: 0.02 };
 window.keyIsDown = { up: false, down: false, left: false, right: false };
 //funcs
 window.incrementKeys = function () {
-    if (window.keyIsDown.up) { window.key.y += key.sensibility }
-    if (window.keyIsDown.left) { window.key.x += key.sensibility }
-    if (window.keyIsDown.right) { window.key.x -= key.sensibility }
-    if (window.keyIsDown.down) { window.key.y -= key.sensibility }
+    if (window.keyIsDown.up) { window.key.y += key.sensitivity }
+    if (window.keyIsDown.left) { window.key.x += key.sensitivity }
+    if (window.keyIsDown.right) { window.key.x -= key.sensitivity }
+    if (window.keyIsDown.down) { window.key.y -= key.sensitivity }
 }
 //adding Listeners
 //triggers
@@ -87,3 +87,11 @@ window.initKeyControl = function (cps = 30) {
     window.keyControlInterval = setInterval(incrementKeys, Math.trunc(1000 / cps))
 };
 window.stopKeyControl = ()=> { clearInterval(keyControlInterval); keyControlInterval = false; };
+
+//wheel
+
+window.wheel = { y: 0, sensitivity: 0.02 };
+window.onwheel = function(e){
+	let sign = e.deltaY>0 ? -1 : 1;
+  	wheel.y += (sign*wheel.sensitivity);
+}

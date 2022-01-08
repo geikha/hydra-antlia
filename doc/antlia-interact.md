@@ -151,9 +151,9 @@ shape(16,.5).diff(osc(8,.1,1).hue(()=>key.y))
   // control the feedback with your left and right arrow keys, while controlling the hue with the up and down arrow keys.
 ```
 
-### key.sensibility
+### key.sensitivity
 
-`key.sensibility` :: default `0.02`
+`key.sensitivity` :: default `0.02`
 
 Change this value to adjust how big of a change pressing the arrow keys makes.
 
@@ -190,3 +190,19 @@ osc(50,0.07,2).luma(.4)
     .out(o0)
   // control the sketch with your arrow keys
 ```
+
+## Wheel interactivity
+
+Another axis controlled by the mouse wheel.
+
+### wheel.y
+
+`()=>wheel.y`
+
+The value of this axis variable will increase when scrolling up and decrease on a scroll down.
+
+### wheel.sensitivity
+
+`wheel.sensitivity` :: default `0.02`
+
+Change this value to adjust how big of a change scrolling the mouse wheel makes.
