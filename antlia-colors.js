@@ -1,6 +1,8 @@
 // ANTLIA by Ritchse
 // https://github.com/ritchse/hydra-antlia
 
+gS = osc().constructor.prototype
+
 //util
 window.unzipKeepingNonindexed = function (arr) {
     var elements = arr.length;
@@ -24,17 +26,17 @@ window.solid_ = (rgb = [0, 0, 0]) => {
         return solid(...rgb);
     }
 };
-osc().constructor.prototype.opacity = function (op) {
+gS.opacity = function (op) {
     if (typeof op === 'function')
         i = () => (1 - op());
     else
         i = 1 - op;
     return this.mult(solid(0, 0, 0, 0), i);
 }
-osc().constructor.prototype.op = function (op) {
+gS.op = function (op) {
     return this.opacity(op)
 }
-osc().constructor.prototype.color_ = function (rgb = [1, 1, 1, 1]) {
+gS.color_ = function (rgb = [1, 1, 1, 1]) {
     if (rgb[0].constructor === Array) {
         return this.color(...window.unzipKeepingNonindexed(rgb));
     }
@@ -42,7 +44,7 @@ osc().constructor.prototype.color_ = function (rgb = [1, 1, 1, 1]) {
         return this.color(...rgb);
     }
 };
-osc().constructor.prototype.applyColor = function (rgb = [1, 1, 1, 1]) {
+gS.applyColor = function (rgb = [1, 1, 1, 1]) {
     if (rgb[0].constructor === Array) {
         return this.saturate(0).color(...window.unzipKeepingNonindexed(rgb));
     }
@@ -50,7 +52,7 @@ osc().constructor.prototype.applyColor = function (rgb = [1, 1, 1, 1]) {
         return this.saturate(0).color(...rgb);
     }
 };
-osc().constructor.prototype.applyColor2 = function (rgb) {
+gS.applyColor2 = function (rgb) {
     return this.saturate(0).invert().color_(rgb.comp()).invert();
 }
 
