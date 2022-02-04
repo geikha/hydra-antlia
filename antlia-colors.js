@@ -18,12 +18,18 @@ window.unzipKeepingNonindexed = function (arr) {
     }
     return final;
 };
-window.solid_ = (rgb = [0, 0, 0]) => {
-    if (rgb[0].constructor === Array) {
-        return solid(...window.unzipKeepingNonindexed(rgb));
+window.arrayHasArray = function(arr){
+    has = false;
+    arr.forEach((x)=> {has = has || (x.constructor === Array)});
+    return has;
+};
+window.solid_ = (rgb = [0, 0, 0],...args) => {
+    color = rgb.concat(args);
+    if (arrayHasArray(color) === Array) {
+        return solid(...window.unzipKeepingNonindexed(color));
     }
     else {
-        return solid(...rgb);
+        return solid(...color);
     }
 };
 gS.opacity = function (op) {
@@ -36,24 +42,26 @@ gS.opacity = function (op) {
 gS.op = function (op) {
     return this.opacity(op)
 }
-gS.color_ = function (rgb = [1, 1, 1, 1]) {
-    if (rgb[0].constructor === Array) {
-        return this.color(...window.unzipKeepingNonindexed(rgb));
+gS.color_ = function (rgb = [1, 1, 1],...args) {
+    color = rgb.concat(args);
+    if (arrayHasArray(color) === Array) {
+        return this.color(...window.unzipKeepingNonindexed(color));
     }
     else {
-        return this.color(...rgb);
+        return this.color(...color);
     }
 };
-gS.applyColor = function (rgb = [1, 1, 1, 1]) {
-    if (rgb[0].constructor === Array) {
-        return this.saturate(0).color(...window.unzipKeepingNonindexed(rgb));
+gS.applyColor = function (rgb = [1, 1, 1],...args) {
+    color = rgb.concat(args);
+    if (arrayHasArray(color) === Array) {
+        return this.saturate(0).color(...window.unzipKeepingNonindexed(color));
     }
     else {
-        return this.saturate(0).color(...rgb);
+        return this.saturate(0).color(...color);
     }
 };
-gS.applyColor2 = function (rgb) {
-    return this.saturate(0).invert().color_(rgb.comp()).invert();
+gS.applyColor2 = function (rgb = [1,1,1],...args) {
+    return this.saturate(0).invert().color_(rgb.comp(),...args).invert();
 }
 
 //Color
