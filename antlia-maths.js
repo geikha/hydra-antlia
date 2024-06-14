@@ -1,5 +1,5 @@
-// ANTLIA by Ritchse
-// https://github.com/ritchse/hydra-antlia
+// ANTLIA by Geikha
+// https://github.com/geikha/hydra-antlia
 
 //Maths
 //const

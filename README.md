@@ -3,7 +3,7 @@
 
 Antlia is a group of extensions for Hydra. Current scripts add functionalities for geometry, coloring, coding of math functions and interactivity with the use of both mouse and keyboard.
 
-*If you're here just for the documentation click [here](https://github.com/ritchse/hydra-antlia/blob/master/doc/).*
+*If you're here just for the documentation click [here](https://github.com/geikha/hydra-antlia/blob/master/doc/).*
 
 ## How to use
 
@@ -27,7 +27,7 @@ If you're wondering about the name, *Antlia* is the south-bordering constelation
 
 ## Starting to use the Antlia functions
 
-**You can find documentation for every Antlia feature in [here](https://github.com/ritchse/hydra-antlia/blob/master/doc/)**
+**You can find documentation for every Antlia feature in [here](https://github.com/geikha/hydra-antlia/blob/master/doc/)**
 
 ### Endnote
 Feel free to make new functions and send the pull requests, or just tell me about your ideas.
